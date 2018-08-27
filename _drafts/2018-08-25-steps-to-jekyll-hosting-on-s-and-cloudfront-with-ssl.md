@@ -31,25 +31,48 @@ It's probably best to follow the [Jekyll quick start quide](https://jekyllrb.com
 
 
 Where the files will live
-------------------------------
+-------------------------
 
 The site files will live in an **Amazon Simple Storage Service** bucket. This bucket will then be attached to **Amazon CloudFront** so that it can support SSL (as well as have global content distribution).
 
 1. Create a S3 bucket:
-    * use the bucket name `static.your-domain.com` - this will be where the non-CloudFront-ed content will live.
+    * use the bucket name `static.YOUR-DOMAIN.com` - this will be where the non-CloudFront-ed content will live.
 2. Setup **Static Web Hosting** on the new bucket
     * `index.html` as index document
     * `error.html` as error document
+3. Set the bucket permissions under `Permssions > Bucket Polciy` add this:
+
+        {
+            "Version": "2012-10-17",
+            "Statement": [
+                {
+                    "Sid": "PublicReadGetObject",
+                    "Effect": "Allow",
+                    "Principal": "*",
+                    "Action": "s3:GetObject",
+                    "Resource": "arn:aws:s3:::static.YOUR-DOMAIN.com/*"
+                }
+            ]
+        }
+
+Create an IAM user for S3 access
+--------------------------------
+
+* In the AWS management console, go to IAM and add a user.
+* Name the user and give the user `Progmatic Acces`
+* Use the `Attach existing policies` link and add `AmazonS3FullAccess`
+* Save the `CSV` file that this will generate somewhere safe. The values will be needed in the deployment phase.
 
 Setting up the domain
 ---------------------
 
-In **Route 53** click `Create Record Set` and create an `A - IPv4 address` with a name of `static` and that is an **alias** to the `static.your-domain.com` S3 bucket.
+In **Route 53** click `Create Record Set` and create an `A - IPv4 address` with a name of `static` and that is an **alias** to the `static.YOUR-DOMAIN.com` S3 bucket.
 
-Using forestry.io to deploy
+**EASY:** Using forestry.io to deploy
 ---------------------------
 
 An easy way to now deploy the site is using [forestry.io](forestry.io) which is a tool to edit Jekyll (and Hugo) sites online. Behind the scenes you are just editing and commiting the post files to GitHub.
 
 1. Import the GitHub repo to forestry.io
-2. Under the `Settings` side menu, click on `Deployment`
+2. Under the `Settings` side menu, click on `Deployment` and select `Amazon S3` filling in the correct bucket name (`static.YOUR-DOMAIN.com`) and the `Access Key` and `Secret` from the `IAM` `CSV`
+3. If all goes swimmingly, you should be able to make an edit using the forestry.io online editor and the site should get deployed to your S3 bucket. Which should be available at the domain name [http://static.YOUR-DOMAIN.com](http://static.YOUR-DOMAIN.com)
