@@ -69,10 +69,50 @@ Setting up the domain
 In **Route 53** click `Create Record Set` and create an `A - IPv4 address` with a name of `static` and that is an **alias** to the `static.YOUR-DOMAIN.com` S3 bucket.
 
 **EASY:** Using forestry.io to deploy
----------------------------
+-------------------------------------
 
 An easy way to now deploy the site is using [forestry.io](forestry.io) which is a tool to edit Jekyll (and Hugo) sites online. Behind the scenes you are just editing and commiting the post files to GitHub.
 
 1. Import the GitHub repo to forestry.io
 2. Under the `Settings` side menu, click on `Deployment` and select `Amazon S3` filling in the correct bucket name (`static.YOUR-DOMAIN.com`) and the `Access Key` and `Secret` from the `IAM` `CSV`
 3. If all goes swimmingly, you should be able to make an edit using the forestry.io online editor and the site should get deployed to your S3 bucket. Which should be available at the domain name [http://static.YOUR-DOMAIN.com](http://static.YOUR-DOMAIN.com)
+
+Create a SSL certificate
+------------------------
+
+In **Amazon Certificate Manager** create an SSL certificate for your domains
+
+* Select **Request a public certificate**
+* Add your domain names:
+    * `YOUR-DOMAIN.com` and
+    * `www.YOUR-DOMAIN.com`
+* Set `Default Root Object` to `index.html`
+* DNS validating is easy if you use **Route53** for DNS - Amazon will make the the changes to **Route53** for you
+
+This will take some time, so wait until it completes before moving on to the **CloudFront** step.
+
+Setup CloudFront
+----------------
+
+Once the SSL certificate is issued you can create a new **Amazon CloudFront** distribution.
+
+* Select **Web**
+* For `Origin Domain Name` select the `static.YOUR-DOMAIN.com` address
+* I selected `Redirect HTTP to HTTPS`
+* Add your `Alternate Domain Names (CNAMES)` which should be:
+    * `YOUR-DOMAIN.com`
+    * `www.YOUR-DOMAIN.com`
+* Select `Custom SSL Certificate` and select your certificate from the dropdown menu
+
+This should be all the settings you need to set. Click `Create Distribution` and wait until it deploys. This will also take some time.
+
+Once deployed to **CloudFront**, you should be able to get the **CloudFront** `Domain Name` from your `Distributions` which will look something like `xhja1sdfs7df.cloudfront.net`. Copy this address for the next step
+
+Update your DNS
+---------------
+In **Route53**
+
+* add a `CNAME` record for the `www.YOUR-DOMAIN.com` entry with the CloudFront value from above (i.e. `xhja1sdfs7df.cloudfront.net`)
+* add an `A - IPv4 address` record with the alias of the **CloudFront** dropdown value.
+
+
