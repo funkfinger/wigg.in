@@ -8,6 +8,7 @@ date: 2018-08-25 16:40:09 +0000
 Here are the steps I went through to get a new / fresh blog up using Jekyll and deployed to Amazon S3 using Codeship with CloudFront and SSL.
 
 
+
 Creating the Jekyll site
 ------------------------
 
@@ -115,5 +116,3 @@ In **Route53**
 
 * add a `CNAME` record for the `www.YOUR-DOMAIN.com` entry with the CloudFront value from above (i.e. `xhja1sdfs7df.cloudfront.net`)
 * add an `A - IPv4 address` record with the alias of the **CloudFront** dropdown value.
-
-
