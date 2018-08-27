@@ -1,10 +1,10 @@
 ---
 layout: default
-title: "Steps to Jekyll hosting on S3 and CloudFront with SSL with Codeship Deployment"
+title: Steps to Jekyll hosting on S3 and CloudFront with SSL with Codeship Deployment
 comments: true
-date: 2018-08-25 16:40:09
----
+date: 2018-08-25 16:40:09 +0000
 
+---
 Here are the steps I went through to get a new / fresh blog up using Jekyll and deployed to Amazon S3 using Codeship with CloudFront and SSL.
 
 Creating the Jekyll site
@@ -52,4 +52,4 @@ Using forestry.io to deploy
 An easy way to now deploy the site is using [forestry.io](forestry.io) which is a tool to edit Jekyll (and Hugo) sites online. Behind the scenes you are just editing and commiting the post files to GitHub.
 
 1. Import the GitHub repo to forestry.io
-2. Under the `Settings` side menu, click on `Deployment` 
+2. Under the `Settings` side menu, click on `Deployment`
