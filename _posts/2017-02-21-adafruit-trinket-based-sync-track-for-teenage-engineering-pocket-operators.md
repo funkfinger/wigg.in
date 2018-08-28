@@ -1,12 +1,18 @@
 ---
 layout: default
-title: "Adafruit Trinket-based Sync Track for Teenage Engineering Pocket Operators"
+title: Adafruit Trinket-based Sync Track for Teenage Engineering Pocket Operators
 comments: true
-date: 2017-02-21 16:28:45
-categories: [trinket,teenage engineering,sync,tap,bpm]
+date: 2017-02-21 16:28:45 +0000
+categories:
+- trinket
+- teenage engineering
+- sync
+- tap
+- bpm
+
 ---
 <br/>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/PH5dn6jR41Q" frameborder="0" allowfullscreen></iframe><br/>
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='[https://www.youtube.com/embed/PH5dn6jR41Q](https://www.youtube.com/embed/PH5dn6jR41Q "https://www.youtube.com/embed/PH5dn6jR41Q")' frameborder='0' allowfullscreen></iframe></div>
 
 An [Adafruit Trinket](https://www.adafruit.com/products/1501)-based button that outputs a [Teenage Engineering Pocket Operator](https://teenageengineering.com/products/po) sync track. I made this Trinket version after I made a [straight-up ATtiny85 / GCC version](http://jaywiggins.com/pocket%20operator/teenage%20engineering/bpm/sync/2016/04/25/teenage-engineering-pocket-operator-tap-sync/) because the Trinket board is probably easier for most folks to get started with.
 
@@ -16,7 +22,7 @@ I personally like using [Platformio](http://platformio.org/) for my AVR (Arduino
 
 * [Adafrit Trinket](https://www.adafruit.com/products/1501) - Your life might be a lot easier if you plug this into an old USB (2.0) hub. Seems like it doesn't play nice with USB 3 - mine was...
 * [button](https://www.adafruit.com/products/473) - I personally used a cool Happ one, but if you're doing your shopping on Adafruit, this one will do...
-* [1/8\" stereo plug](https://www.adafruit.com/products/2790) This one would work well, or you can sacrifice a cable you already have lying around and put some bread board pins in it like I did...
+* [1/8" stereo plug](https://www.adafruit.com/products/2790) This one would work well, or you can sacrifice a cable you already have lying around and put some bread board pins in it like I did...
 * [a 5V power source](https://www.adafruit.com/products/1959) - I like to use something like this one - mine was free swag
 
 ### BOM - not required...
@@ -50,7 +56,6 @@ The OLED display has 4 connections:
 
 The LED can be connected - 470Ω resistor -> Anode of LED -> Cathode of LED -> ground.
 
-
 ### [Software](https://github.com/funkfinger/trinket-tap-bpm-for-pocket-operator)
 
 Here is the [Software](https://github.com/funkfinger/trinket-tap-bpm-for-pocket-operator)
@@ -59,14 +64,13 @@ Here is the [Software](https://github.com/funkfinger/trinket-tap-bpm-for-pocket-
 If you do use Platformio, here are the build commands...
 
 To build:
-    
-    platformio run
-    
-To burn (Trinket needs to be freshly reset to enter boot loader mode - pulsating red LED):
-    
-    platformio run -t program
-    
-To clean:
-    
-    platformio run -t clean
 
+    platformio run
+
+To burn (Trinket needs to be freshly reset to enter boot loader mode - pulsating red LED):
+
+    platformio run -t program
+
+To clean:
+
+    platformio run -t clean
