@@ -98,8 +98,10 @@ Setup CloudFront
 
 Once the SSL certificate is issued you can create a new **Amazon CloudFront** distribution.
 
+<!-- * For `Origin Domain Name` select the `static.YOUR-DOMAIN.com` address -->
+
 * Select **Web**
-* For `Origin Domain Name` select the `static.YOUR-DOMAIN.com` address
+* use the static address of the S3 bucket for the `Prigin Domain Name` - IE `http://static.YOUR-DOMAIN.com.s3-website-us-east-1.amazonaws.com` as seen in this StackOverflow answer: [https://stackoverflow.com/a/33087418/2642232](https://stackoverflow.com/a/33087418/2642232) <sup>[NOTE](#note)</sup>
 * I selected `Redirect HTTP to HTTPS`
 * Add your `Alternate Domain Names (CNAMES)` which should be:
     * `YOUR-DOMAIN.com`
@@ -109,6 +111,8 @@ Once the SSL certificate is issued you can create a new **Amazon CloudFront** di
 This should be all the settings you need to set. Click `Create Distribution` and wait until it deploys. This will also take some time.
 
 Once deployed to **CloudFront**, you should be able to get the **CloudFront** `Domain Name` from your `Distributions` which will look something like `xhja1sdfs7df.cloudfront.net`. Copy this address for the next step
+
+<a name="note">NOTE</a>: Entering the static website value here should allow `permalink: pretty` in your config - so that you don't need `index.html` at the end of links... 
 
 Update your DNS
 ---------------

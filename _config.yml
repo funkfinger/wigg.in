@@ -54,7 +54,7 @@ permalink: pretty
 excerpt_separator: "\n\n\n" # two blank lines
 
 style:
-  minimalist: false
+  minimalist: true
   dark: false
 
 navigation:
@@ -63,11 +63,11 @@ navigation:
   - about.md
 
 comments:
-  disqus: "disqus-contrast"
+  disqus: "jaywiggins"
 #  isso: "comments.mysite.org"
 
 links: # see http://fontawesome.io/icons/#brand for all possible icons
-  - twitter: "https://twitter.com/funkfinger/"
+  # - twitter: "https://twitter.com/funkfinger/"
   - github: "https://github.com/funkfinger/wigg.in"
   - envelope: "mailto:blog@irk.com"
 
