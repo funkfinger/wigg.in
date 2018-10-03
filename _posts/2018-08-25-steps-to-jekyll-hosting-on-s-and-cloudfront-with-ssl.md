@@ -7,6 +7,7 @@ date: 2018-08-25 16:40:09 +0000
 ---
 Here are the steps I went through to get a new / fresh blog up using Jekyll and deployed to Amazon S3 using Forestry.io with CloudFront and SSL.
 
+
 ## Creating the Jekyll site
 
 It's probably best to follow the [Jekyll quick start quide](https://jekyllrb.com/docs/quickstart/), but here's basically what I went through...
