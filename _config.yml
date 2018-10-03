@@ -51,7 +51,7 @@ more: "read more »"
 baseurl: ""
 paginate: 10
 permalink: pretty
-excerpt_separator: "\n\n\n" # two blank lines
+excerpt_separator: "\n\n" # two blank lines
 
 style:
   minimalist: true
