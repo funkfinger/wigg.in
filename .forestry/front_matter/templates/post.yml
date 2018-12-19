@@ -8,3 +8,5 @@ fields:
   label: comments
   default: true
   hidden: false
+pages:
+- _posts/hass-io-fresh-z-wave-install.md
