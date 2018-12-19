@@ -9,4 +9,4 @@ fields:
   default: true
   hidden: false
 pages:
-- _posts/hass-io-fresh-z-wave-install.md
+- _posts/Hass.io Fresh Z-Wave Install.md
