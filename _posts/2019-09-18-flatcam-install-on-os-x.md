@@ -1,3 +1,10 @@
+---
+layout: default
+title: FlatCAM Install On OS X Mojave with Vagrant and VirtualBox
+comments: true
+date: 2019-09-19 00:25:09 +0000
+---
+
 I've seen a number of tutorials on how easy it was to create milled PCBs using FlatCAM to create the gcode from gerber files. Well, what wasn't easy was getting FlatCAM installed on my macOS Mojave machine. I never got it running... so, let's try Vagrant and VirtualBox to see if we can have a more standardized base to install it into...
 
 > **NOTE:** These are just the things that I found to work, there's likely better ways to get this running and it's very likely these things may not work as expected on your machine.... That said, I'll post them here so that someone may benifit and I can remember what I did next year (or next week)...
