@@ -92,3 +92,7 @@ This will require you to add the new fingerprint to the `~/.ssh/known_hosts` fil
 The next time you run this command, you won't have to acknowledge (type yes) which means you can add a custom command under the `Applications` menu item in `XQuartz` using the same command as above.
 
 > **NOTE:** if you re-provision, you will need to remove the prior RSA key in the `~/.ssh/known_hosts` file
+
+# Voila!
+
+![FlatCAM running on OS X Mojave](https://s3.amazonaws.com/media.jaywiggins.com/images/flatcam_on_os_x.png "FlatCAM running on OS X Mojave")
