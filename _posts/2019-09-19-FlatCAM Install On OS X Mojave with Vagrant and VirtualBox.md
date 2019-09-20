@@ -96,3 +96,7 @@ The next time you run this command, you won't have to acknowledge (type yes) whi
 # Voila!
 
 ![FlatCAM running on OS X Mojave](https://s3.amazonaws.com/media.jaywiggins.com/images/flatcam_on_os_x.png "FlatCAM running on OS X Mojave")
+
+# Things to know...
+
+Vagrant will setup a shared and synced folder at `/vagrant` on the virtual machine. This will be the same folder as where your `Vagrantfile` is located. This is the place that you can access your gcode and gerber files from both the host and the virtual systems.
