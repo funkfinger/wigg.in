@@ -1,13 +1,14 @@
 ---
+layout: post
 title: Testing Rack::Flash in Sinatra
-date: '2010-03-08'
+date: "2010-03-08"
 tags:
-- code
-- code
-- flash-testing
-- rack
-- ruby
-- sinatra
+  - code
+  - code
+  - flash-testing
+  - rack
+  - ruby
+  - sinatra
 ---
 
 Here's a slightly dumb way to test Rack::Flash in a Sinatra app...
@@ -43,5 +44,3 @@ class FundastacheTest < Test::Unit::TestCase
   end
 end
 </pre>
-
-

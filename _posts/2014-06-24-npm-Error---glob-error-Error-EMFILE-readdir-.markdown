@@ -1,6 +1,7 @@
 ---
+layout: post
 title: 'npm Error - " glob error { [Error: EMFILE, readdir ... "'
-date: '2014-06-24'
+date: "2014-06-24"
 tags: []
 ---
 
@@ -9,5 +10,3 @@ Found the answer why this was happening here: <a href="http://blog.izs.me/post/5
 Posting it here because this worked:
 
 <script src="https://gist.github.com/funkfinger/e10a76f316b3b5cf0394.js"></script>
-
-

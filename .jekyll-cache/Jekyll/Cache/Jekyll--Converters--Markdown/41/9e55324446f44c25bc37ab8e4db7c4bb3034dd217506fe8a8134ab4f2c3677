@@ -1,0 +1,2 @@
+I"t<p>While trying out a Ubiquiti wifi solution, I ran into one AP not getting installed correctly. It was showing as either <code class="highlighter-rouge">disconnected</code> or <code class="highlighter-rouge">pending authorization</code> - the latter I think means that it was trying to connect to a wifi netowork rather than the ethernet network it was plugged into.</p>
+:ET

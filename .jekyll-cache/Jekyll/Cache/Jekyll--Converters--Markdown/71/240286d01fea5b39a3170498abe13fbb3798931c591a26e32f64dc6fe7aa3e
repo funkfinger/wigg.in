@@ -1,0 +1,12 @@
+I"‡<p>I added the following to <code class="highlighter-rouge">/Applications/Arduino.app/Contents/Java/hardware/arduino/avr/programmers.txt</code> and restarted the Arduino IDE and magically, this seemed to work for me.</p>
+
+<pre>
+  dragon.name=Atmel AVR Dragon in HVSP mode
+  dragon.communication=usb
+  dragon.protocol=dragon_hvsp
+  dragon.program.tool=avrdude
+  dragon.program.extra_params=-P usb
+</pre>
+
+<p>I pieced this together from <a href="http://fab.cba.mit.edu/classes/863.12/people/charles.fracchia/wk6.html#fabsampler">these</a> <a href="http://www.instructables.com/id/Add-a-custom-programmer-on-Arduino-IDE/?ALLSTEPS">two</a> sites.</p>
+:ET

@@ -1,6 +1,7 @@
 ---
+layout: post
 title: Broken chain...
-date: '2010-03-21'
+date: "2010-03-21"
 tags: []
 ---
 

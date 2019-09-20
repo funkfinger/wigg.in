@@ -1,6 +1,7 @@
 ---
+layout: post
 title: Clever floating point rounding in JavaScript
-date: '2015-02-03'
+date: "2015-02-03"
 tags: []
 ---
 

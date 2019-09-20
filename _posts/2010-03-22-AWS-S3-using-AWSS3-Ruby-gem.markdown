@@ -1,17 +1,18 @@
 ---
+layout: post
 title: AWS S3 using AWS/S3 Ruby gem
-date: '2010-03-22'
+date: "2010-03-22"
 tags:
-- amazon
-- aws
-- awss3
-- bucket
-- code
-- gem
-- ruby
-- s3
-- s3object
-- upload
+  - amazon
+  - aws
+  - awss3
+  - bucket
+  - code
+  - gem
+  - ruby
+  - s3
+  - s3object
+  - upload
 ---
 
 working on storing files to Amazon's S3 web service. Here's what I've come up with so far:

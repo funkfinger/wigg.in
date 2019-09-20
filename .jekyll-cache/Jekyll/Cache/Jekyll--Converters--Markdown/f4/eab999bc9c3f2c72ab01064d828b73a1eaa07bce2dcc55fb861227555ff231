@@ -1,0 +1,40 @@
+I"R<p>While looking around for a good <a href="https://github.com/bblanchon/ArduinoJson">library to parse JSON</a> on an Arduino, I bumped into <a href="http://platformio.org/">PlatformIO</a>. This seems to address a problem I’ve been struggling with – library / board management.</p>
+
+<p>I had to update my OS X Homebrew install of Python to get this working (I really needed to do that anyway) and I needed to install this using <code class="highlighter-rouge">sudo</code> - <code class="highlighter-rouge">sudo pip install -U platformio</code>. Because of <code class="highlighter-rouge">virtualenv</code>, I also had to <code class="highlighter-rouge">gpip install -U pip setuptools</code> - which is using a ‘global’ version of the Python pip command. Modifications to my <code class="highlighter-rouge">.bashrc</code> file were required…</p>
+
+<p>With all that, I was able to build and deploy the ‘blink’ code on a Arduino Uno (actually an Adafruit Metro) using the command:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> mkdir platformio_blink
+ cd platformio_blink
+ platformio init --board=uno
+</code></pre></div></div>
+
+<p>and then added a <code class="highlighter-rouge">main.cpp</code> file to the <code class="highlighter-rouge">platformio_blink/src</code> folder</p>
+
+<p>Here’s what that looks like:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#ifdef ENERGIA
+	#include "Energia.h"
+#else
+	#include "Arduino.h"
+#endif
+
+#ifndef LED_PIN
+	// Most Arduino boards already have a LED attached to pin 13 on the board itself
+	#define LED_PIN 13
+#endif
+
+void setup() {
+  pinMode(LED_PIN, OUTPUT);     // set pin as output
+}
+
+void loop() {
+  digitalWrite(LED_PIN, HIGH);  // set the LED on
+  delay(1000);                  // wait for a second
+  digitalWrite(LED_PIN, LOW);   // set the LED off
+  delay(1000);                  // wait for a second
+}
+</code></pre></div></div>
+
+<p>Then by executing <code class="highlighter-rouge">platformio run</code>, the code was uploaded to the Uno / Metro board. And voila, blinking pin 13!</p>
+:ET

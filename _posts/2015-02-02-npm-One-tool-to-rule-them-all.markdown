@@ -1,13 +1,15 @@
 ---
-title: 'npm: One tool to rule them all...'
-date: '2015-02-02'
+layout: post
+title: "npm: One tool to rule them all..."
+date: "2015-02-02"
 tags:
-- code
+  - code
 ---
 
 After trying to sort out what a toolset should be for standard JS / HTML / possibly Node development, I'm narrowing on just using npm. Here's the reference material that got me to this place:
 
 <strong>npm as front-end package management (bower replacement)</strong>
+
 <ul>
 	<li><a href="https://github.com/bower/bower/issues/1520">https://github.com/bower/bower/issues/1520</a></li>
 	<li><a href="http://blog.kewah.com/2014/npm-as-a-front-end-package-manager/">http://blog.kewah.com/2014/npm-as-a-front-end-package-manager/</a></li>

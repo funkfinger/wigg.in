@@ -1,16 +1,17 @@
 ---
+layout: post
 title: AVR Dragon / avrdude command to reset bad ATtiny85 fuses
-date: '2011-05-03'
+date: "2011-05-03"
 tags:
-- atmel
-- attiny
-- avr-dragon
-- avrdude
-- dragon_hvsp
-- electronics
-- fuse
-- high-voltage
-- reset
+  - atmel
+  - attiny
+  - avr-dragon
+  - avrdude
+  - dragon_hvsp
+  - electronics
+  - fuse
+  - high-voltage
+  - reset
 ---
 
 <pre>

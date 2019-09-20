@@ -1,19 +1,21 @@
 ---
+layout: post
 title: CSS sprites for buttons
-date: '2010-03-14'
+date: "2010-03-14"
 tags:
-- accessibility
-- buttons
-- code
-- css
-- html
-- image-replacement
-- sprite
+  - accessibility
+  - buttons
+  - code
+  - css
+  - html
+  - image-replacement
+  - sprite
 ---
 
 Found <a href="http://www.komodomedia.com/blog/2009/05/sign-in-with-twitter-and-facebook-buttons/">these</a> login buttons online which have three states - normal, hover and visited. This makes them perfect to use as a CSS sprite, so here's how that went down:
 
 The CSS looks like this:
+
 <pre lang="css" line="1">
 .signin_button {
   display: block;
@@ -44,6 +46,7 @@ span.hide {
 </pre>
 
 and the HTML looks like this:
+
 <pre lang="html4strict" line="1">
   <p>
     <a class='signin_button' href='/oauth/create' id='twitter_button'>

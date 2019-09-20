@@ -1,0 +1,60 @@
+I"�<p>I’ve been fighting this issue the last couple nights. I wrote earlier about how <code>Rack::PostBodyContentTypeParser</code> can automagically turn a posted JSON object into a Rack / Sinatra params hash. So, I wrote some tests to make sure this was the case and moved on. Well, it turns out in real life things weren’t working and I couldn’t figure out why. Everything looked cool, but the hash wasn’t getting set when I did an AJAX call in the browser - everything was empty. I looked at everything, from the server, to the JS library, to the browser, to setting different content types in <code>prototype.js</code> etc… UGH!</p>
+
+<p>The short of it is that <code>Rack::PostBodyContentTypeParser</code> requires exactly <code>application/json</code> in order to automagically turn the posted JSON object into Rack params and <code>prototype.js</code> (and <code>jquery.js</code> were adding an encoding type of <code>charset=UTF-8</code> so the entire header entry was coming across as this <code>CONTENT_TYPE: application/json; charset=UTF-8</code>. So, as a fix, I’m just including the <code>Rack::PostBodyContentTypeParser</code> in the Sinatra application with one small change. Here’s the code:</p>
+
+<pre lang="ruby" line="1">
+module Rack
+ 
+  # A Rack middleware for parsing POST/PUT body data when Content-Type is
+  # not one of the standard supported types, like <tt>application/json</tt>.
+  #
+  # TODO: Find a better name.
+  #
+  class PostBodyContentTypeParser
+ 
+    # Constants
+    #
+    CONTENT_TYPE = 'CONTENT_TYPE'.freeze
+    POST_BODY = 'rack.input'.freeze
+    FORM_INPUT = 'rack.request.form_input'.freeze
+    FORM_HASH = 'rack.request.form_hash'.freeze
+ 
+    # Supported Content-Types
+    #
+
+    ################## turned into regex so it matches type with encoding data...
+    #APPLICATION_JSON = 'application/json'.freeze
+    APPLICATION_JSON = /^application\/json/.freeze
+ 
+    def initialize(app)
+      @app = app
+    end
+ 
+    def call(env)
+      case env[CONTENT_TYPE]
+      when APPLICATION_JSON
+env.update(FORM_HASH =&gt; JSON.parse(env[POST_BODY].read), FORM_INPUT =&gt; env[POST_BODY])
+      end
+      @app.call(env)
+    end
+ 
+  end
+end
+</pre>
+
+<p>I tested that this worked by writing the following:</p>
+
+<pre lang="ruby" line="1">
+def test_post_as_json_converts_to_params
+  # sanity check that post with normal params works...
+  post '/test_params_as_json', :param1=&gt;"param one"
+  assert_equal last_response.body,"params[:param1]=param one"
+  post '/test_params_as_json', {:param1=&gt;"param one"}.to_json, "CONTENT_TYPE"=&gt;"application/json"
+  assert_equal last_response.body,"params[:param1]=param one"
+  # this is the problem, adding a charset to the content type seems to breaks rack-contrib/post_body_content_type_parser.rb
+  post '/test_params_as_json', {:param1=&gt;"param one"}.to_json, "CONTENT_TYPE"=&gt;"application/json; charset=UTF-8"
+  assert_equal last_response.body,"params[:param1]=param one"    
+end
+
+</pre>
+:ET

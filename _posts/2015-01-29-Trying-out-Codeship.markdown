@@ -1,15 +1,18 @@
 ---
+layout: post
 title: Trying out Codeship
-date: '2015-01-29'
+date: "2015-01-29"
 tags: []
 ---
 
 Stumbled across <a href="https://codeship.com/">Codeship</a> and decided to give it a shot. Works a little similar to deploying to <a href="http://heroku.com">Heroku</a> which I'm already doing, so it wasn't too bad to figure out.
 
 Because <a href="http://heroku.com">Heroku</a> stores deployment specific data in environment variables, my little application was pretty much already set up for <a href="https://codeship.com/">Codeship</a>. I had to export the variables a little differently. Also, I learned quickly that you had to set the Ruby version using RVM in the setup and the test command. Here is my setup - the environment vars are set so the tests can pass:
+
 <script src="https://gist.github.com/funkfinger/dba9dedc81de4d6bf40e.js"></script>
 
 and here is my test command:
+
 <script src="https://gist.github.com/funkfinger/83c1e0cf92ad914e90d6.js"></script>
 
 and the poop is passing (at least right now it is)...

@@ -1,11 +1,12 @@
 ---
+layout: post
 title: Battling autotest
-date: '2010-03-27'
+date: "2010-03-27"
 tags:
-- autotest
-- code
-- test
-- testing
+  - autotest
+  - code
+  - test
+  - testing
 ---
 
 Looking for a reason that autotest is skipping some of my test files....
@@ -21,4 +22,3 @@ end
 </pre>
 
 I think I'll just comment the exception line out for now as I don't think it's necessary.
-

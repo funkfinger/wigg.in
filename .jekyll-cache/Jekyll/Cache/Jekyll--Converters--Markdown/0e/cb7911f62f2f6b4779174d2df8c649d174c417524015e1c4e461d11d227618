@@ -1,0 +1,12 @@
+I"�<p>Here’s the front-end development stack that I’m leaning towards for a new build that I’m contemplating (at this specific momement):</p>
+
+<ul>
+  <li><a href="http://facebook.github.io/react/index.html">React</a> - JS lib</li>
+  <li><a href="http://babeljs.io">babeljs.io</a> - ES6 now</li>
+  <li><a href="http://facebook.github.io/jsx/">JSX</a> - possibly for templating - prefered by React</li>
+  <li><a href="http://webpack.github.io/">webpack</a> - bundler</li>
+  <li><a href="http://facebook.github.io/jest/">Jest</a> - testing framework</li>
+</ul>
+
+<p>Today, it’s looking like Facebook is winning my attention on open source projects - not sure why this is. I’m still interested in Google’s <a href="https://angularjs.org/">Angular</a>, but am feeling like jumping into that ecosystem might feel a little locked in- React may feel like the same thing, but I guess I’ll see…</p>
+:ET

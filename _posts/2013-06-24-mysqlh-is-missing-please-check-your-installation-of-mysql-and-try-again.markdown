@@ -1,6 +1,7 @@
 ---
+layout: post
 title: mysql.h is missing.  please check your installation of mysql and try again.
-date: '2013-06-24'
+date: "2013-06-24"
 tags: []
 ---
 

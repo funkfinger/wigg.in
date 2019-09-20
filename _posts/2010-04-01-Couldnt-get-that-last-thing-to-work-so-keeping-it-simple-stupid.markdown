@@ -1,13 +1,14 @@
 ---
+layout: post
 title: Couldn't get that last thing to work so keeping it simple (stupid)
-date: '2010-04-01'
+date: "2010-04-01"
 tags:
-- before-filter
-- code
-- file-extension
-- format
-- mime-type
-- sinatra
+  - before-filter
+  - code
+  - file-extension
+  - format
+  - mime-type
+  - sinatra
 ---
 
 This could undoubtedly be more elegant, but it's late and I want it to work now. May take another stab at it later...
@@ -15,6 +16,7 @@ This could undoubtedly be more elegant, but it's late and I want it to work now.
 <strong>TODO:</strong> limit the content types and only allow rendering if they are ok.
 
 Setting up a before filter:
+
 <pre lang='ruby' line='1'>
 before do
   # remove and grab the file extension
@@ -26,6 +28,7 @@ end
 </pre>
 
 and using a case statement:
+
 <pre lang='ruby' line='1'>
 get "/home" do
   case @format
@@ -39,4 +42,3 @@ get "/home" do
   end
 end
 </pre>
-

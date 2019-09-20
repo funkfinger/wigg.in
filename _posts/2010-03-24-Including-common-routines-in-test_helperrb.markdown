@@ -1,13 +1,14 @@
 ---
+layout: post
 title: Including common routines in test_helper.rb
-date: '2010-03-24'
+date: "2010-03-24"
 tags:
-- code
-- ruby
-- test
-- testunit
-- testing
-- test_helper
+  - code
+  - ruby
+  - test
+  - testunit
+  - testing
+  - test_helper
 ---
 
 I should have done this earlier. To do a number of tests, I have to repeat the same actions like create a user, log a user in, etc. I was putting these actions at the top of each test file, but have wised up and moved them to the <code>test_helper.rb</code> file. Here's how that looks now:

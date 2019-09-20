@@ -1,9 +1,12 @@
 ---
-layout: default
+layout: post
 title: "Hot Glue Halloween Cobwebs"
 comments: true
 date: 2016-09-09 13:28:56
-categories: [halloween,diy,hot glue]
+categories: [halloween, diy, hot glue]
+hero_image: /images/web-hero.png
+hero_image_attribution_name: DENISE BARTH
+hero_image_attribution_link: https://vanvleck.org/event/outdoor-adventures-spiders/black-and-white-close-up-cobweb-34225/
 ---
 
 We're all into Halloween around here... Here's how we made some cobwebs using only a hot glue gun and glue.

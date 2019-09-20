@@ -1,12 +1,13 @@
 ---
+layout: post
 title: Here's what my test_helper.rb file looks like...
-date: '2010-03-09'
+date: "2010-03-09"
 tags:
-- code
-- helper
-- ruby
-- sinatra
-- test
+  - code
+  - helper
+  - ruby
+  - sinatra
+  - test
 ---
 
 <pre lang="ruby" line="1">

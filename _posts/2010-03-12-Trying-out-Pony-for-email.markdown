@@ -1,13 +1,14 @@
 ---
+layout: post
 title: Trying out Pony for email
-date: '2010-03-12'
+date: "2010-03-12"
 tags:
-- code
-- email
-- gem
-- pony
-- ruby
-- test
+  - code
+  - email
+  - gem
+  - pony
+  - ruby
+  - test
 ---
 
 Email is going to be used to activate an account, and I'm leaning towards using the Pony gem to simplify the creations and sending.
@@ -38,4 +39,3 @@ Don't forget to nclude the Pony test helpers in your test class...
 <pre lang='ruby' line='1'>
 include Pony::TestHelpers
 </pre>
-

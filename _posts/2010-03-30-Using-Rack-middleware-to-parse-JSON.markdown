@@ -1,16 +1,17 @@
 ---
+layout: post
 title: Using Rack middleware to parse JSON
-date: '2010-03-30'
+date: "2010-03-30"
 tags:
-- code
-- json
-- middleware
-- params
-- postbodycontenttypeparser
-- rack
-- ruby
-- sinatra
-- testing
+  - code
+  - json
+  - middleware
+  - params
+  - postbodycontenttypeparser
+  - rack
+  - ruby
+  - sinatra
+  - testing
 ---
 
 In attempting to AJAX-ize the site, I had the desire to handle JSON as if it were form post data. Queue a Rack middleware solution. <code><a href='http://github.com/rack/rack-contrib'>rack-contrib</a></code> contains a bunch of common middleware extensions, one being the horribly named <code>PostBodyContentTypeParser</code>. To get this working I added:

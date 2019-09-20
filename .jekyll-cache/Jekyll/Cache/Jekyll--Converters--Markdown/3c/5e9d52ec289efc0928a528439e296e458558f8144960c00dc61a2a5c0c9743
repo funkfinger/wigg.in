@@ -1,0 +1,97 @@
+I"1!<p>I’ve seen a number of tutorials on how easy it was to create milled PCBs using FlatCAM to create the gcode from gerber files. Well, what wasn’t easy was getting FlatCAM installed on my macOS Mojave machine. I never got it running… so, let’s try Vagrant and VirtualBox to see if we can have a more standardized base to install it into…</p>
+
+<blockquote>
+  <p><strong>NOTE:</strong> These are just the things that I found to work, there’s likely better ways to get this running and it’s very likely these things may not work as expected on your machine…. That said, I’ll post them here so that someone may benifit and I can remember what I did next year (or next week)…</p>
+</blockquote>
+
+<h1 id="install-homebrew-virtualbox-vagrant--xquartz">Install <code class="highlighter-rouge">homebrew</code>, <code class="highlighter-rouge">virtualbox</code>, <code class="highlighter-rouge">vagrant</code> &amp; <code class="highlighter-rouge">xquartz</code></h1>
+
+<p>I already had these installed, so I couldn’t tell you the specifics on how that went down, but <a href="https://medium.com/@JohnFoderaro/macos-sierra-vagrant-quick-start-guide-2b8b78913be3">this seems like a good guide</a> by John Foderaro. <strong>Stop after Step 3</strong> - we’ll do make the <code class="highlighter-rouge">Vagrantfile</code> another way…</p>
+
+<p>This covers the first three dependencies, but you’ll have to do <code class="highlighter-rouge">xquartz</code> on your own:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew cask install xquartz
+</code></pre></div></div>
+
+<p>You’ll probably be asked for your user password - I was… Also, this seems to take a while.</p>
+
+<h1 id="setup-vagrant">Setup <code class="highlighter-rouge">vagrant</code></h1>
+
+<p>You can probably put this just about anywhere, but I went with a folder called <code class="highlighter-rouge">vms</code> in my root user folder:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir ~/vms
+mkdir ~/vms/flatcam
+cd ~/vms/flatcam
+vagrant box add ubuntu/bionic64
+vagrant init ubuntu/bionic64
+</code></pre></div></div>
+
+<p>That last command will create a very basic <code class="highlighter-rouge">Vagrantfile</code> with lots of comments. Replace it’s contents with something like this:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># -*- mode: ruby -*-</span>
+<span class="c1"># vi: set ft=ruby :</span>
+
+<span class="no">Vagrant</span><span class="p">.</span><span class="nf">configure</span><span class="p">(</span><span class="s2">"2"</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
+  <span class="n">config</span><span class="p">.</span><span class="nf">vm</span><span class="p">.</span><span class="nf">box</span> <span class="o">=</span> <span class="s2">"ubuntu/bionic64"</span>
+  <span class="n">config</span><span class="p">.</span><span class="nf">vm</span><span class="p">.</span><span class="nf">provision</span> <span class="s2">"file"</span><span class="p">,</span> <span class="ss">source: </span><span class="s2">"~/.ssh/id_rsa.pub"</span><span class="p">,</span> <span class="ss">destination: </span><span class="s2">"~/.ssh/authorized_keys"</span>
+  <span class="n">config</span><span class="p">.</span><span class="nf">ssh</span><span class="p">.</span><span class="nf">private_key_path</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"~/.vagrant.d/insecure_private_key"</span><span class="p">,</span> <span class="s2">"~/.ssh/id_rsa"</span><span class="p">]</span>
+  <span class="n">config</span><span class="p">.</span><span class="nf">ssh</span><span class="p">.</span><span class="nf">insert_key</span> <span class="o">=</span> <span class="kp">false</span>
+  <span class="n">config</span><span class="p">.</span><span class="nf">vm</span><span class="p">.</span><span class="nf">provision</span> <span class="ss">:shell</span><span class="p">,</span> <span class="ss">path: </span><span class="s2">"bootstrap.sh"</span>
+  <span class="n">config</span><span class="p">.</span><span class="nf">ssh</span><span class="p">.</span><span class="nf">forward_x11</span> <span class="o">=</span> <span class="kp">true</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>Now create that above mentioned <code class="highlighter-rouge">bootstrap.sh</code> file in the same folder as the <code class="highlighter-rouge">Vagrantfile</code> and make it’s contents:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/usr/bin/env bash</span>
+
+<span class="c"># prevent `default: dpkg-preconfigure: unable to re-open stdin: No such file or directory` errors</span>
+<span class="nb">export </span><span class="nv">DEBIAN_FRONTEND</span><span class="o">=</span>noninteractive
+
+apt-get update <span class="nt">-y</span>
+apt-get <span class="nb">install</span> <span class="nt">-y</span> git
+
+apt-get <span class="nb">install</span> <span class="nt">-y</span> libpng-dev
+apt-get <span class="nb">install</span> <span class="nt">-y</span> libfreetype6
+apt-get <span class="nb">install</span> <span class="nt">-y</span> libfreetype6-dev
+apt-get <span class="nb">install</span> <span class="nt">-y</span> python3-dev
+apt-get <span class="nb">install</span> <span class="nt">-y</span> python3-simplejson
+apt-get <span class="nb">install</span> <span class="nt">-y</span> python3-pyqt4
+apt-get <span class="nb">install</span> <span class="nt">-y</span> python3-numpy
+apt-get <span class="nb">install</span> <span class="nt">-y</span> python3-scipy
+apt-get <span class="nb">install</span> <span class="nt">-y</span> python3-matplotlib
+apt-get <span class="nb">install</span> <span class="nt">-y</span> libgeos-dev
+apt-get <span class="nb">install</span> <span class="nt">-y</span> python-shapely
+apt-get <span class="nb">install</span> <span class="nt">-y</span> python-pip
+apt-get <span class="nb">install</span> <span class="nt">-y</span> libspatialindex-dev
+apt-get <span class="nb">install</span> <span class="nt">-y</span> python3-tk
+apt-get <span class="nb">install</span> <span class="nt">-y</span> python3-shapely
+apt-get <span class="nb">install</span> <span class="nt">-y</span> python3-rtree
+apt-get <span class="nb">install</span> <span class="nt">-y</span> python3-svg.path
+
+<span class="nb">cat</span> /vagrant/id_rsa.pub <span class="o">&gt;&gt;</span> /home/vagrant/.ssh/authorized_keys
+git clone https://bitbucket.org/jpcgt/flatcam.git /vagrant/flatcam
+</code></pre></div></div>
+
+<p>These are the commands that will setup (provision) the virtual machine.</p>
+
+<p>Now, comes a big one - start the vagrant vm and set it up (provision):</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vagrant up --provision
+</code></pre></div></div>
+
+<h1 id="start-xquartz-and-flatcam">Start XQuartz and FlatCAM</h1>
+
+<p>In order to start FlatCAM, you’ll need to run it from the X Window System <a href="https://www.xquartz.org">XQuartz</a>. This should have been installed in the above brew command. In my case, it was installed in <code class="highlighter-rouge">/Applications/Utilities/</code>. Once it starts, you will have an <code class="highlighter-rouge">Applications</code> menu. Under that select <code class="highlighter-rouge">Terminal</code> and run the following command:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh -X -p 2222 vagrant@localhost /vagrant/flatcam/flatcam
+</code></pre></div></div>
+
+<p>This will require you to add the new fingerprint to the <code class="highlighter-rouge">~/.ssh/known_hosts</code> file. Type <code class="highlighter-rouge">yes</code> and if all goes well, FlatCAM should start. If it doesn’t, I probably can’t help you just because I don’t know enough about this stuff…</p>
+
+<p>The next time you run this command, you won’t have to acknowledge (type yes) which means you can add a custom command under the <code class="highlighter-rouge">Applications</code> menu item in <code class="highlighter-rouge">XQuartz</code> using the same command as above.</p>
+
+<blockquote>
+  <p><strong>NOTE:</strong> if you re-provision, you will need to remove the prior RSA key in the <code class="highlighter-rouge">~/.ssh/known_hosts</code> file</p>
+</blockquote>
+:ET

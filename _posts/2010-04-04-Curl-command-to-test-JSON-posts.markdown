@@ -1,14 +1,15 @@
 ---
+layout: post
 title: Curl command to test JSON posts
-date: '2010-04-04'
+date: "2010-04-04"
 tags:
-- applicationjson
-- bash
-- code
-- curl
-- json
-- post
-- test
+  - applicationjson
+  - bash
+  - code
+  - curl
+  - json
+  - post
+  - test
 ---
 
 <pre lang='bash' line='1'>

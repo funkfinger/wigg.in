@@ -1,0 +1,2 @@
+I"h<p>I’m digging up some old code that I did a long time ago - It’s a software-based pulse width modulator (PWM) for AVR microprocessors. The basics came from <a href="http://www.atmel.com/Images/doc8020.pdf">this technote</a>, and the code was based on <a href="http://www.avrfreaks.net/sites/default/files/AVR136.zip">this sample project</a> from AVR.</p>
+:ET

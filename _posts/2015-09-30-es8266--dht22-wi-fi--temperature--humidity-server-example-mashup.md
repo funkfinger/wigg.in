@@ -1,10 +1,11 @@
 ---
-layout: default
+layout: post
 title: "ES8266 / DHT22 - Wi-Fi / Temperature & Humidity server (example mashup)"
 comments: true
 date: 2015-09-30 23:23:40
-categories: [es8266,dht22,arduino,iot,temperature,humidity,server]
+categories: [es8266, dht22, arduino, iot, temperature, humidity, server]
 ---
+
 Here's a quick (couple hours with my sloppy mistakes) mashup of two Arduino examples - the ES8266 (HUZZAH from Adafruit) WiFi controller and a DHT22 temperature and humidity sensor. This is the start of a bigger project which tells outdoor and indoor temperature along with accurate time (more on that to come), and probably wind speed, etc...
 
 Here's (sort of) what the circuit looks like:

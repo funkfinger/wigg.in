@@ -1,0 +1,7 @@
+I"<p>This seems to be the easiest way to start something up on bootup of Rasperian…</p>
+
+<ul>
+  <li>run <code class="highlighter-rouge">crontab -u pi -e</code></li>
+  <li>and add <code class="highlighter-rouge">@reboot sh /home/pi/amazon_echo.sh</code></li>
+</ul>
+:ET

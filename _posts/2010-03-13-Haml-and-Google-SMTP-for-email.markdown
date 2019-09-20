@@ -1,15 +1,16 @@
 ---
+layout: post
 title: Haml and Google SMTP for email
-date: '2010-03-13'
+date: "2010-03-13"
 tags:
-- code
-- email
-- erb
-- haml
-- pony
-- ruby
-- smtp
-- template
+  - code
+  - email
+  - erb
+  - haml
+  - pony
+  - ruby
+  - smtp
+  - template
 ---
 
 I first thought that I would have to use ERB to render non-HTML-like templates. Not true. Haml let you do a <code>:plain</code> filter which is pretty much the same as using ERB templates.
@@ -46,6 +47,3 @@ Pony.mail(
   }
 )
 </pre>
-
-
-

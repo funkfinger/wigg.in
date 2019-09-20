@@ -1,0 +1,59 @@
+---
+layout: default
+---
+
+<article
+  class="post h-entry"
+  itemscope
+  itemtype="http://schema.org/BlogPosting"
+>
+  <header class="post-header">
+    <div class="date">
+      <time
+        class="dt-published"
+        datetime="{{ page.date | date_to_xmlschema }}"
+        itemprop="datePublished"
+      >
+        {{ page.date }}
+      </time>
+    </div>
+
+    {% if page.hero_image %}
+    <div class="hero-image">
+      <img src="{{ page.hero_image }}" alt="{{ page.title }}" />
+    </div>
+    {% endif %} {% if page.hero_image_attribution_name %}
+    <div class="hero-attribution">
+      {% if page.hero_image_attribution_link %}<a
+        href="{{ page.hero_image_attribution_link }}"
+        >{% endif %} Image By
+        {{ page.hero_image_attribution_name }}
+        {% if page.hero_image_attribution_link %}</a
+      >{% endif %}
+    </div>
+    {% endif %}
+
+    <h1 class="title">
+      {{ page.title }}
+    </h1>
+
+    <p class="post-meta">
+      {%- if page.author -%} •
+      <span itemprop="author" itemscope itemtype="http://schema.org/Person"
+        ><span class="p-author h-card" itemprop="name">{{
+          page.author
+        }}</span></span
+      >
+      {%- endif -%}
+    </p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    {{ content }}
+  </div>
+
+  {%- if site.disqus.shortname -%} {%- include disqus_comments.html -%} {%-
+  endif -%}
+
+  <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+</article>

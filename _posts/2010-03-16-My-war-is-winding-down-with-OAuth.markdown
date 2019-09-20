@@ -1,15 +1,16 @@
 ---
+layout: post
 title: My war is winding down with OAuth
-date: '2010-03-16'
+date: "2010-03-16"
 tags:
-- access-token
-- code
-- consumer
-- key-secret
-- oauth
-- provider
-- request-token
-- token
+  - access-token
+  - code
+  - consumer
+  - key-secret
+  - oauth
+  - provider
+  - request-token
+  - token
 ---
 
 Summary of what's going on with OAuth:
@@ -41,8 +42,4 @@ Summary of what's going on with OAuth:
 </ul>
 </li>
 
-
-
 </ol>
-
-

@@ -1,16 +1,17 @@
 ---
+layout: post
 title: C99 Mode - Whatever that is...
-date: '2011-06-15'
+date: "2011-06-15"
 tags:
-- attiny
-- avr
-- avr-gcc
-- c
-- c99
-- code
-- electronics
-- gcc
-- makefile
+  - attiny
+  - avr
+  - avr-gcc
+  - c
+  - c99
+  - code
+  - electronics
+  - gcc
+  - makefile
 ---
 
 So, I've never dabbled in C until now while using it with AVR microcontrollers - and while trying to complie a simple for loop:

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: "Revisiting ATtiny85 Software-Based PWM to Drive RGB LED"
 comments: true
 date: 2015-09-08 20:34:06
@@ -13,5 +13,5 @@ I originally wanted to have this run 2 RGB LEDs from an ATtiny85 but I steered a
     6. The RESET pin must tolerate high voltages when entering and operating in programming modes and, as a consequence,
     has a weak drive strength as compared to regular I/O pins. See Figure 22-23, Figure 22-24, Figure 22-25, and Figure 22-26
     (starting on page 184).
-    
+
 Looks like I can't drive an LED with the reset as an output directly. Bummer. No big deal using a bigger (more pins) AVR chip, but I thought it was cool to get two PWM-ed RGB LEDs out of an 8-pin chip.

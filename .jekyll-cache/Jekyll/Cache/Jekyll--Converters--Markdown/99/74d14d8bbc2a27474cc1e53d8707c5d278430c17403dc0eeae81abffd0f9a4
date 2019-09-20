@@ -1,0 +1,2 @@
+I"ì<p>In order to get Platformio to build a project based on ESP8266 release candidate, I had to do the following - <a href="https://github.com/platformio/platformio/issues/401#issuecomment-166958952">basically these instructions</a>:</p>
+:ET

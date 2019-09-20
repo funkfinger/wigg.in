@@ -1,16 +1,17 @@
 ---
+layout: post
 title: Facebook OAuth with Sinatra
-date: '2010-05-20'
+date: "2010-05-20"
 tags:
-- access-token
-- api
-- client-id
-- code
-- facebook
-- graph
-- graph-facebook-com
-- json
-- oauth
+  - access-token
+  - api
+  - client-id
+  - code
+  - facebook
+  - graph
+  - graph-facebook-com
+  - json
+  - oauth
 ---
 
 This <strong>MOSTLY</strong> is working, so, here's what I found when trying to connect to Facebook with OAuth. It needs some <strong>serious refactoring</strong> because a lot of this was done in an "investigative" trial and error way. It also looks like Facebook have improved their <a href='http://developers.facebook.com/docs/api'>docs on this</a> since I was first looking at them...

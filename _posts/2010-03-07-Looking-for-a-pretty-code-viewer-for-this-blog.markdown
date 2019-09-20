@@ -1,15 +1,16 @@
 ---
+layout: post
 title: Looking for a pretty code viewer for this blog...
-date: '2010-03-07'
+date: "2010-03-07"
 tags:
-- code
-- code
-- geshi
-- javascript
-- ruby
+  - code
+  - code
+  - geshi
+  - javascript
+  - ruby
 ---
 
-<b>* Updated: Working thanks to <a href='http://wordpress.org/extend/plugins/wp-syntax/'>this</a> WP plugin. </b>
+<b>\* Updated: Working thanks to <a href='http://wordpress.org/extend/plugins/wp-syntax/'>this</a> WP plugin. </b>
 
 Here's some code as a test:
 

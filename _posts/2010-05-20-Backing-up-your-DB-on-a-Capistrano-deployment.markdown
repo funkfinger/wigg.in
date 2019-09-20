@@ -1,14 +1,15 @@
 ---
+layout: post
 title: Backing up your DB on a Capistrano deployment
-date: '2010-05-20'
+date: "2010-05-20"
 tags:
-- backup
-- capistrano
-- code
-- database
-- db
-- deploy
-- sqlite
+  - backup
+  - capistrano
+  - code
+  - database
+  - db
+  - deploy
+  - sqlite
 ---
 
 Yeah, it's simple but useful. Since I'm using <code>sqlite</code> at the moment, it's just a copy but you could run any command in a similar way. I'm also tagging the backup name with a date. Here's a snip from my Capistrano deploy file....

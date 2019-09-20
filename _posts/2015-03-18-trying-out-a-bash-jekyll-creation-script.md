@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: "Trying out a bash Jekyll creation script"
 comments: true
 date: 2015-03-18 14:37:45

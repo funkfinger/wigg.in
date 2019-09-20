@@ -1,0 +1,19 @@
+I"�<p>In order to get Platformio to build a project based on ESP8266 release candidate, I had to do the following - <a href="https://github.com/platformio/platformio/issues/401#issuecomment-166958952">basically these instructions</a>:</p>
+
+<ul>
+  <li>replaced <code class="highlighter-rouge">~/.platformio/packages/framework-arduinoespressif</code> files with those downloaded zip of the <a href="https://github.com/esp8266/Arduino/archive/2.1.0-rc2.zip">ESP8266 Arduino RC</a> - if the <code class="highlighter-rouge">framework-arduinoespressif</code> folder isn’t there, try building the project.</li>
+  <li>replaced <code class="highlighter-rouge">~/.platformio/packages/ldscripts</code> with <a href="https://github.com/platformio/platformio-pkg-ldscripts/tree/esp8266_stage">these files</a></li>
+</ul>
+
+<p>I think I can get back to norm by doing a- though the <code class="highlighter-rouge">ldscripts</code> folder will still be messed up…</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>platformio platforms uninstall espressif
+platformio platforms install espressif
+</code></pre></div></div>
+
+<p>Wondering if I could use the following to set these as seen in the <a href="https://github.com/platformio/platformio-pkg-ldscripts/tree/esp8266_stage">repo</a> :</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[env:specific_ld_script]
+build_flags = -Wl,-Tname_of_script.ld
+</code></pre></div></div>
+:ET

@@ -1,14 +1,14 @@
 ---
-layout: default
+layout: post
 title: "Setting My ATtiny85 Fuses To Mimic The Adafruit Trinket"
 comments: true
 date: 2015-09-04 06:17:54
-categories: [attiny85,trinket,avr,fuses]
+categories: [attiny85, trinket, avr, fuses]
 ---
 
 To get a [Adafruit Trinket](https://www.adafruit.com/products/2000) Arduino sketch running on a straight-up ATtiny85, I did the following:
 
-I set the fuses of the ATtiny85 to what I believe the Trinket uses - or at least what the `boards.txt` has in it. I did this using my AVR Dragon - I *believe* that this has to be done with high-voltage programing, but I'm not sure, so don't quote me.
+I set the fuses of the ATtiny85 to what I believe the Trinket uses - or at least what the `boards.txt` has in it. I did this using my AVR Dragon - I _believe_ that this has to be done with high-voltage programing, but I'm not sure, so don't quote me.
 
 <pre>
 avrdude -c dragon_hvsp -p attiny85 -U lfuse:w:0xc1:m -U hfuse:w:0xd4:m -U efuse:w:0xff:m -P usb
@@ -51,6 +51,3 @@ attiny85at16p.build.core=tiny
 </pre>
 
 Now, obviously, select this board when building the sketch.
-
-
-

@@ -1,0 +1,16 @@
+I"�<p>While trying out a Ubiquiti wifi solution, I ran into one AP not getting installed correctly. It was showing as either <code class="highlighter-rouge">disconnected</code> or <code class="highlighter-rouge">pending authorization</code> - the latter I think means that it was trying to connect to a wifi netowork rather than the ethernet network it was plugged into.</p>
+
+<p>Through various Google searches, I found that might mean that the controller and the AP were running different versions. I tried a few times upgrading via the web interface to no avail. Finally I got the upgrade bin file by getting it from the controller:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://10.0.2.22:8080/dl/firmware/BZ2/3.2.12.2920/firmware.bin
+</code></pre></div></div>
+
+<p>and then scp-ing it to the non working AP - the default user / pass for a factory reset AP is <code class="highlighter-rouge">ubnt / ubnt</code>:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>scp firmware.bin ubnt@10.0.2.25:/tmp/fwupdate.bin
+</code></pre></div></div>
+
+<p>It then said “Managed by Other” - I adopted via the advanced setting and used ubnt / ubnt for user / pass.</p>
+
+<p>There were some other things that went on, and now the AP is showing as <code class="highlighter-rouge">Connected (100 FDX)</code> which means it’s not connected to as a gigabit port (even though it is) — so there’s still some work to do.</p>
+:ET

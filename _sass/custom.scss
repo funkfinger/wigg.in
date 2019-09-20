@@ -1,0 +1,92 @@
+$brand-color: rgb(173, 104, 0);
+
+@import url("https://fonts.googleapis.com/css?family=Farro|Noto+Serif+SC|Ultra&display=swap");
+
+body,
+.content,
+.e-content {
+  line-height: 1.4em;
+  font-family: "Noto Serif SC", serif;
+}
+
+.e-content blockquote {
+  font-size: 1.2em;
+  padding: 1em;
+  line-height: 1.6em;
+  color: $brand-color;
+}
+
+div.highlighter-rouge {
+  padding: 1.5em;
+}
+
+.e-content h1,
+.e-content h2,
+.e-content h3,
+.e-content h4,
+.e-content h5,
+.e-content h6 {
+  border-bottom: 1px dashed $grey-color;
+  margin-bottom: 1em;
+  padding-top: 1em;
+}
+
+.site-title {
+  font-family: "Ultra", serif;
+}
+
+.title {
+  font-size: 2em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Farro", sans-serif;
+  line-height: 1.3em;
+}
+
+.hero-image {
+  padding-bottom: 1em;
+}
+
+.more {
+  padding-bottom: 1.5em;
+}
+
+.post_separator {
+  border-top: 1px dashed #999;
+}
+
+.site-header {
+  background-color: $grey-color-light;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+
+.page-link {
+  padding: 0.25em;
+}
+
+.date {
+  font-size: 0.75em;
+  color: $grey-color;
+  margin-top: 1em;
+}
+
+.hero-attribution {
+  font-size: 0.75em;
+  color: $grey-color;
+  text-align: right;
+  margin-top: -0.75em;
+}
+
+.hero-attribution a {
+  color: $grey-color;
+}

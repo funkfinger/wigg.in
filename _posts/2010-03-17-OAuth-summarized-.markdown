@@ -1,18 +1,19 @@
 ---
-title: 'OAuth summarized '
-date: '2010-03-17'
+layout: post
+title: "OAuth summarized "
+date: "2010-03-17"
 tags:
-- access-token
-- application
-- code
-- consumer
-- gem
-- oauth
-- request-token
-- ruby
-- session
-- sinatra
-- user
+  - access-token
+  - application
+  - code
+  - consumer
+  - gem
+  - oauth
+  - request-token
+  - ruby
+  - session
+  - sinatra
+  - user
 ---
 
 <h3>Application Scope</h3>

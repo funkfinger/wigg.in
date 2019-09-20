@@ -1,10 +1,11 @@
 ---
-layout: default
+layout: post
 title: "AVR Dragon and OSX (trying it out again)"
 comments: true
 date: 2015-08-29 14:25:05
-categories: [avr,dragon,attiny,avrdude,avr-gcc,OSX]
+categories: [avr, dragon, attiny, avrdude, avr-gcc, OSX]
 ---
+
 I've been inspired by my 4yo son to get back into some electronics for a spooky Halloween display we're planning on setting up this year. Who am I kidding, my son has nothing to do with it. Anyway, I want to make a few cheap, but hopefully terrifying, effects for the yard and inside.
 
 Some blinking eyes seem like a good thing to hang in the bushes and trees outside, so I'm looking at using an ATtiny85 and a couple of LEDs for them. Here's my proof of concept - running the ATtiny @ 6V (on fresh batteries) which is slightly higher than specs say is cool. Also running the LEDs stright from pins without current limiting resistors.
@@ -20,7 +21,7 @@ Some of what was difficult before doing AVR on OSX looks to be simplified by oth
   $ brew install avr-libc
   $ brew install avrdude --with-usb
 </pre>
-  
+
 Be patient, there's a lot going in that second command.
 
 I'm using the AVR Dragon development platform for programming the ATtiny - It's a little complicated, and there may be easier / more straight forward ways of doing this now, but this is what I have and it did work at one time. I purchased 2 *DracoDapter*s quite some time ago from [www.allgaiershops.com](http://www.allgaiershops.com/) - these made the [config](http://blog.allgaiershops.com/2011/01/23/avr-dragon-adapters/) of the Dragon a lot easier but I'm not very confident you can still buy them. I also soldered on a ZIF socket.

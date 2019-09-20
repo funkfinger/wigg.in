@@ -1,0 +1,6 @@
+I"µ<h3>Application Scope</h3>
+<pre lang="ruby" line="1">
+# create the consumer...
+consumer ||= OAuth::Consumer.new(KEY, SECRET, {:site =&gt; SITE, :authorize_path =&gt; PATH })
+</pre>
+:ET

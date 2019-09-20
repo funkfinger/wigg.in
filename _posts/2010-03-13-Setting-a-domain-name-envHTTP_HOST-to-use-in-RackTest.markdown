@@ -1,14 +1,15 @@
 ---
+layout: post
 title: Setting a domain name (env['HTTP_HOST']) to use in Rack::Test
-date: '2010-03-13'
+date: "2010-03-13"
 tags:
-- code
-- env
-- helper
-- http_host
-- rack
-- ruby
-- test
+  - code
+  - env
+  - helper
+  - http_host
+  - rack
+  - ruby
+  - test
 ---
 
 This may not be the best way to do this, but this is what I used at the top of my test file so that a helper method has a value for Rack's env['HTTP_HOST']:

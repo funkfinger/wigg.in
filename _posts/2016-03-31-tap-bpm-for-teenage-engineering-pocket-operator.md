@@ -1,9 +1,9 @@
 ---
-layout: default
+layout: post
 title: "Tap BPM for Teenage Engineering Pocket Operator"
 comments: true
 date: 2016-03-31 11:26:08
-categories: [attiny85,trinket,po-12]
+categories: [attiny85, trinket, po-12]
 ---
 
 I have a [Teenage Engineering Pocket Operator (PO-12)](https://www.teenageengineering.com/products/po) and it's pretty cool. One thing I felt was missing, though, was a way to tap a button to set the BPM value - the 3 presets (Hip-Hop, Disco, Techno) and dial adjust isn't very specific. It does however have a sync feature that allows you to connect multiple Pocket Operators together (and I've heard some other devices as well) - and keep them in sync... which got me thinking, could one create the sync signal using some simple electronics and programming? Project time...
