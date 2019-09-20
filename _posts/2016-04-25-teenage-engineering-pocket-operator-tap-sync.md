@@ -7,7 +7,7 @@ categories: [pocket operator, teenage engineering, bpm, sync]
 ---
 
 <br/>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Cx91QPgpqYk" frameborder="0" allowfullscreen></iframe><br/>
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://www.youtube.com/embed/Cx91QPgpqYk' frameborder='0' allowfullscreen></iframe></div>
 
 This little project is finally coming together. Here are the parts I settled on. The button was going to be an arcade-style button, but I was running into missed taps, which, when rapid firing Galaga swarms, might be **OK**, but when trying to time out BPM is a killer. I ended up using an [Adafruit momentary capacitive touch sensor](https://www.adafruit.com/products/1374) instead. For the LCD display (which was totally useful for debugging), a cheap ebay I2C lcd module was used.
 
