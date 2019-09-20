@@ -1,2 +1,0 @@
-I"˜<p>In my case it was an OAuth request token and when it was serialized it must have been larger than the cookie limit. Spent too much time on this.</p>
-:ET

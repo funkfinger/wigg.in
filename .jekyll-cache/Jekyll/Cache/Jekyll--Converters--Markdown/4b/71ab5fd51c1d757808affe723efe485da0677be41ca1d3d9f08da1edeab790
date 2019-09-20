@@ -1,2 +1,0 @@
-I"<p>While looking around for a good <a href="https://github.com/bblanchon/ArduinoJson">library to parse JSON</a> on an Arduino, I bumped into <a href="http://platformio.org/">PlatformIO</a>. This seems to address a problem I’ve been struggling with – library / board management.</p>
-:ET

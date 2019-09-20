@@ -1,8 +1,0 @@
-I"K<p><br /></p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Cx91QPgpqYk" frameborder="0" allowfullscreen=""></iframe>
-<p><br /></p>
-
-<p>This little project is finally coming together. Here are the parts I settled on. The button was going to be an arcade-style button, but I was running into missed taps, which, when rapid firing Galaga swarms, might be <strong>OK</strong>, but when trying to time out BPM is a killer. I ended up using an <a href="https://www.adafruit.com/products/1374">Adafruit momentary capacitive touch sensor</a> instead. For the LCD display (which was totally useful for debugging), a cheap ebay I2C lcd module was used.</p>
-
-<p>The software is fairly straight forward except for the <a href="http://jaywiggins.com/attiny85/i2c/lcd/2016/04/18/mostly-no-arduino-attiny-ic-lcd/">totally and terribly</a> hacked I2C LCD bits which were ripped from various spots online. <a href="https://github.com/funkfinger/tap-bpm-click-track">Here’s the code…</a> Someday, I’ll try and post a schematic - particularly if someone stumbles by and is interested.</p>
-:ET

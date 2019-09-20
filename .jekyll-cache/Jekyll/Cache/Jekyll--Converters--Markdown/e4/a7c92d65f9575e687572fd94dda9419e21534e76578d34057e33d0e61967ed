@@ -1,2 +1,0 @@
-I"Ý<p>I added the following to <code class="highlighter-rouge">/Applications/Arduino.app/Contents/Java/hardware/arduino/avr/programmers.txt</code> and restarted the Arduino IDE and magically, this seemed to work for me.</p>
-:ET

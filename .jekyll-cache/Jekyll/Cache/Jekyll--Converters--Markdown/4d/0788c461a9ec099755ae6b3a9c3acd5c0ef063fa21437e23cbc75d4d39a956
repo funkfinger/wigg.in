@@ -1,2 +1,0 @@
-I"`<p>I’ve seen a number of tutorials on how easy it was to create milled PCBs using FlatCAM to create the gcode from gerber files. Well, what wasn’t easy was getting FlatCAM installed on my macOS Mojave machine. I never got it running… so, let’s try Vagrant and VirtualBox to see if we can have a more standardized base to install it into…</p>
-:ET

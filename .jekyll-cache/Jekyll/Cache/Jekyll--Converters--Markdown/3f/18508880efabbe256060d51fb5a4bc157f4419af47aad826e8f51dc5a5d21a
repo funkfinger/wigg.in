@@ -1,7 +1,0 @@
-I"<pre lang="ruby" line="1">
-require 'fundastache'
-require 'test/unit'
-require "rack/test"
-require "rack/flash/test"
-</pre>
-:ET

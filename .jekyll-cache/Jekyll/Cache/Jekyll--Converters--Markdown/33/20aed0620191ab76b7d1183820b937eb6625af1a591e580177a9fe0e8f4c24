@@ -1,2 +1,0 @@
-I"<p>An <a href="https://www.adafruit.com/products/1501">Adafruit Trinket</a>-based button that outputs a <a href="https://teenageengineering.com/products/po">Teenage Engineering Pocket Operator</a> sync track. I made this Trinket version after I made a <a href="http://jaywiggins.com/pocket%20operator/teenage%20engineering/bpm/sync/2016/04/25/teenage-engineering-pocket-operator-tap-sync/">straight-up ATtiny85 / GCC version</a> because the Trinket board is probably easier for most folks to get started with.</p>
-:ET
