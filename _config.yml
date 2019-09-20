@@ -3,7 +3,7 @@ title: "Jay, trying to remember..."
 description: "code, music, food, fun and whatnot... (mostly code)"
 more: "read more&hellip;"
 email: blog@irk.com
-url: "http://jaywiggins.com" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://jaywiggins.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: funkfinger
 github_username: funkfinger
 
@@ -17,10 +17,10 @@ excerpt_separator: "\n\n" # two blank lines
 show_excerpts: true
 
 disqus:
-  shortname: "jaywiggins"
+  shortname: jaywiggins
 
-comments:
-  disqus: "jaywiggins"
+# comments:
+# disqus: jaywiggins
 #  isso: "comments.mysite.org"
 
 links: # see http://fontawesome.io/icons/#brand for all possible icons
