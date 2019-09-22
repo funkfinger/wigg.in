@@ -19,7 +19,6 @@ pinterest_username: funkfinger
 rss: rss
 
 header_pages:
-  - about.md
   - archive.html
 
 # future minima format:
