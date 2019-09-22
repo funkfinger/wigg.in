@@ -7,6 +7,17 @@ url: "https://jaywiggins.com" # the base hostname & protocol for your site, e.g.
 twitter_username: funkfinger
 github_username: funkfinger
 
+google_analytics: UA-148448725-1
+
+minima:
+  social_links:
+    twitter: funkfinger
+    github: funkfinger
+    flickr: funkfinger
+    instagram: funkfinger
+    pinterest: funkfinger
+    rss: rss
+
 theme: minima
 
 baseurl: ""
@@ -18,15 +29,6 @@ show_excerpts: true
 
 disqus:
   shortname: jaywiggins
-
-# comments:
-# disqus: jaywiggins
-#  isso: "comments.mysite.org"
-
-links: # see http://fontawesome.io/icons/#brand for all possible icons
-  # - twitter: "https://twitter.com/funkfinger/"
-  - github: "https://github.com/funkfinger/wigg.in"
-  - envelope: "mailto:blog@irk.com"
 
 defaults:
   [
