@@ -9,6 +9,18 @@ github_username: funkfinger
 
 google_analytics: UA-148448725-1
 
+theme: minima
+
+# existing minima format:
+twitter_username: funkfinger
+github_username:  funkfinger
+flickr_username: funkfinger
+instagram_username: funkfinger
+pinterest_username: funkfinger
+youtube_username: funkfinger
+rss: rss
+
+# future minima format:
 minima:
   social_links:
     twitter: funkfinger
@@ -18,7 +30,6 @@ minima:
     pinterest: funkfinger
     rss: rss
 
-theme: minima
 
 baseurl: ""
 paginate: 10
