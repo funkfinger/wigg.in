@@ -63,6 +63,7 @@ h6 {
 
 .site-header {
   background-color: $grey-color-light;
+  border-top: none;
 }
 
 .pagination {
@@ -80,14 +81,16 @@ h6 {
   margin-top: 1em;
 }
 
-.hero-attribution {
+.hero-attribution,
+.attribution {
   font-size: 0.75em;
   color: $grey-color;
   text-align: right;
   margin-top: -0.75em;
 }
 
-.hero-attribution a {
+.hero-attribution a,
+.attribution a {
   color: $grey-color;
 }
 

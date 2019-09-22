@@ -36,6 +36,8 @@ Given that Trinket looks like this:
 
 ![Trinket](https://cdn-learn.adafruit.com/assets/assets/000/025/644/medium640/trinket5.png)
 
+<div class="attribution"><a href="https://learn.adafruit.com/assets/25645">Image by Adafruit</a></div>
+
 My audio cable has 3 conductors:
 
 - green -> Trinket #4
